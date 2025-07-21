@@ -25,6 +25,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Vulnerable routes
+/*
 app.get('/api/template', (req, res) => {
   const tpl = req.query.tpl || 'Hello <%= name %>';
   try {
@@ -58,6 +59,7 @@ app.get('/api/fetch', async (req, res) => {
     res.status(500).send('Fetch error: ' + error.message);
   }
 });
+*/
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
