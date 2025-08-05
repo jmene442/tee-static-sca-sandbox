@@ -24,7 +24,18 @@ const PORT = process.env.PORT || 3001;
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Here are the new
+// PLEASE UNCOMMENT THE BELOW
+
+// Command Injection via child_process.exec
+
+/*
+<------------------------------------------------------------------------------------------------------------------------------->
+*/
+
 // Vulnerable routes
+// OLD CODE - DO NOT UNCOMMENT
+// this serves as example code to explain the previous behaviour from the original runtime sandbox.
 /*
 app.get('/api/template', (req, res) => {
   const tpl = req.query.tpl || 'Hello <%= name %>';
